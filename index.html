@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl">
+<h1> Sudoku is Cool!!</h1>
+
+<div>
+    <table>
+        <tr ng-repeat="row in matrix track by $index">
+            <td ng-repeat="elem in row track by $index">
+              <input type="number" min="{{min}}" max="{{max}}" size="200" ng-model="checkMatrix[$parent.$index][$index]" ng-change="setInput($parent.$index,$index)" >
+              {{matrix[$parent.$index][$index]}}
+                                                   
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+<script src="app.js"></script>
+<script src="sudokuService.js"></script>
+
+<script src="controller.js"></script>
+</body>
+</html>
+
