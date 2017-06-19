@@ -46,17 +46,18 @@ app.factory('sudo',function(){
     return solveSud(0,0,1);
     
     function solveSud(i,j,num){
-      if (greed[i][j] !== ''){
-        var a = getNextCell(i,j,newState);
-        return solveSud(a[0],a[1],1);
+      if (greed[i][j] === ''){
+        newState[i][j] = num;
       }
-      newState[i][j] = num;
       
       if (isInputValid(i,j,newState)){
         a = getNextCell(i,j,newState);
         if (a === null){
           return newState;
         };
+        if (greed[a[0]][a[1]] !== ''){
+          getNextCell(a[0],a[1],newState);
+        }
         i = a[0];
         j = a[1];
         
@@ -71,6 +72,9 @@ app.factory('sudo',function(){
           };
           i = a[0];
           j = a[1];
+          if (greed[i][j] !== ''){
+            getPrevCellLessThan9(i,j,newState)
+          }
           num = newState[i][j];
           
           return solveSud(i,j,num+1);
@@ -95,6 +99,7 @@ app.factory('sudo',function(){
 
      
   var getNextCell = function(i,j,matrix){
+    
     if (j == matrix.length-1) {
       j = 0;
       i = i + 1;
@@ -105,6 +110,7 @@ app.factory('sudo',function(){
     if (i === 9){
       return null;
     }
+    
     return [i,j];   
   }
 
@@ -134,6 +140,7 @@ app.factory('sudo',function(){
     if (i == -1){
       return null;
     }
+
     return [i,j];
   }
 
