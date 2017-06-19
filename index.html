@@ -4,14 +4,16 @@
 <title>Page Title</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="MyCtrl">
 <h1> Sudoku is Cool!!</h1>
-
+  
 <div>
-    <table>
+    <button ng-click="solveSud()" class="myButton">Solve from current state</button>
+    <table cellspacing="0">
         <tr ng-repeat="row in matrix track by $index">
-            <td ng-repeat="elem in row track by $index">
+            <td ng-repeat="elem in row track by $index" class ="c{{$index}} r{{$parent.$index}} table-cell">
               <input type="number" min="{{min}}" max="{{max}}" size="200" ng-model="checkMatrix[$parent.$index][$index]" ng-change="setInput($parent.$index,$index)" >
               {{matrix[$parent.$index][$index]}}
                                                    

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.3"
+    "angular": "^1.6.3",
+    "angular-cookies": "^1.6.4"
   }
 }

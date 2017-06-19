@@ -1,8 +1,24 @@
-.table_1 {
-  empty-cells: show;
-  width: 550px;
-  height: 550px;
-  table-layout: fixed;
+.myButton {
+  background-color:#44c767;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  padding:16px 31px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+  background-color:#5cbf2a;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
 }
 input {
     width: 100%;
@@ -11,10 +27,68 @@ input {
     border:none;
     font-size:25px;
     text-align: center;
+    background-color: #F0FFF0; 
 }
-
-
-td, th {
+table {
+  background-color: #F0FFF0;
+  align:center; 
+  margin: 0 auto;
+}
+td {
   border: 1px solid #999;
   padding: 0.5rem;
+  width: 60px;
+}
+ 
+tr {
+  height: 60px;
+} 
+.c0 {
+  border-left-color: black;
+  border-left-width: 3px;
+}
+.c2 {
+  border-right-color: black;
+  border-right-width: 1.5px;
+}
+.c3 {
+  border-left-color: black;
+  border-left-width: 1.5px;
+
+}
+.c5 {
+  border-right-color: black;
+  border-right-width: 1.5px;
+}
+.c6 {
+  border-left-color: black;
+  border-left-width: 1.5px;
+}
+.c8 {
+  border-right-color: black;
+  border-right-width: 3px;
+}
+.r0 {
+  border-top-color: black;
+  border-top-width: 3px;
+}
+.r2 {
+  border-bottom-color: black;
+  border-bottom-width: 1.5px;
+}
+.r3 {
+  border-top-color: black;
+  border-top-width: 1.5px;
+}
+.r5 {
+  border-bottom-color: black;
+  border-bottom-width: 1.5px;
+}
+.r6 {
+  border-top-color: black;
+  border-top-width: 1.5px;
+}
+.r8 {
+ border-bottom-color: black;
+ border-bottom-width: 3px; 
 }
